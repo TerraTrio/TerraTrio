@@ -1,0 +1,157 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set html and body heights */
+html, body {
+    height: 100%; /* Ensures the background covers the full viewport */
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    background-image: url("../photo/grass.jpg");  
+    background-size: cover;                    
+    background-position: center;              
+    background-attachment: fixed;             
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Section with Transparent Background */
+/* Header Section */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space out logo, navbar, and search bar */
+    padding: 20px;
+    background-color: transparent; /* Transparent background */
+    color: white;
+}
+
+/* Logo Styling */
+.logo-container {
+    flex: 0 0 auto; /* Keep logo on the left */
+}
+
+.logo {
+    max-height: 80px;
+    margin-left: 40px;
+}
+
+/* Navbar Styling */
+nav {
+    flex: 1; /* Allow nav to grow and take space */
+    display: flex;
+    justify-content: center; /* Center the navigation links */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Add space between nav items */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white; /* Adjust link color for readability */
+    font-size: 1.2em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Optional: shadow for better visibility */
+}
+
+/* Search Bar Styling */
+.search-container {
+    flex: 0 0 auto; /* Keep search bar on the right */
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+    width: 200px;
+    margin-left: 15px;
+}
+
+
+/* Home Section Styling */
+#home {
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+#home h2 {
+    font-size: 2em;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+#home p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+/* Contact Section */
+ul {
+    list-style-type: none;
+    font-size: 1.1em;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+#intro {
+    margin: 20px;
+    padding: 20px;
+    color: #000000;
+}
+
+#intro h2 {
+    font-size: 2em;
+    color: #4CAF50;
+    margin-bottom: 15px;
+}
+
+#intro p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+
+/* Footer with Transparent Background */
+footer {
+    background-color: transparent; /* Makes the footer transparent */
+    color: white; /* Ensures footer text is visible */
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Adds shadow for better visibility */
+}
+
+
+
+
