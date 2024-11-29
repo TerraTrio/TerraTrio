@@ -53,13 +53,7 @@ class MarkerHandler {
         this.markers = []; // Store marker references to open popup later
     }
 
-    initTileLayer() {
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 20,
-            minZoom: 17,
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(this.map);
-    }
+    
   }
 
   class MapHandler {
@@ -68,6 +62,8 @@ class MarkerHandler {
       this.allMarkers = [];
       
       L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        minZoom: 17,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       }).addTo(this.map);
   
