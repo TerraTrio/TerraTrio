@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NBSC Printing Map</title>
+    <title>NBSC Grass Map</title>
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/96e37b53f1.js" crossorigin="anonymous"></script>
     <!-- Bootstrap CSS & JS -->
@@ -14,14 +14,22 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="map.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+
 </head>
 <body>
   <header>
 
-        
+    <!--LOGO-->    
     <div class="logo-container">
-        <img src="../photo/log.png" alt="NBSC Logo" class="logo">
+        <a href="../index.html" class="logo-link">
+            <img src="../photo/log.png" alt="NBSC Logo" class="logo">
+            <span class="logo-text">TerraTrio</span>
+        </a>
     </div>
+    
+    <!--NavBar-->  
     <nav>
         <ul>
           <li><a href="../index.html">Home</a></li>
@@ -35,55 +43,39 @@
     </div>
 </header>
 
+<h2>Grass Map</h2>
+
 
     <!-- Map Section -->
     <div id="mapContainer">
-        <div id="map"></div>
-        <div id="infoDisplay">
-            <div class="info-container">
-            <h2>NBSC GRASS MAP</h2>
-                 </div>
+        <div id="map"></div>       
         </div>
     </div>
 
     <!-- Custom JS -->
     <script src="./map.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const toggleButton = document.querySelector(".navbar-toggle");
-            const closeButton = document.querySelector(".close-btn");
-            const navbar = document.querySelector(".vertical-navbar");
-
-            toggleButton.addEventListener("click", () => {
-                navbar.classList.add("active");
-            });
-
-            closeButton.addEventListener("click", () => {
-                navbar.classList.remove("active");
-            });
-        });
-        
-        
-        function searchLocation() {
-            const searchValue = document.getElementById("searchInput").value.toLowerCase();
-
-           
-        
-            allMarkers.forEach(function (item) {
-                const { marker, pin } = item;
-
-              
-                if (pin.pin_name.toLowerCase().includes(searchValue)) {
-                    marker.addTo(map);
-                } else {
-                    map.removeLayer(marker); 
-                }
-            });
-        }
-    </script>
-
-<footer>
-    <p>&copy; 2024 TerraTrio. All Rights Reserved.</p>
+  
+ <footer>
+    <div class="social-container">
+        <div class="social-icons">
+            <div class="social-icon">
+                <a href="https://www.facebook.com" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </div>
+            <div class="social-icon">
+                <a href="https://www.twitter.com" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+            <div class="social-icon">
+                <a href="https://www.instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <p>2024 TerraTrio. All Rights Reserved.</p>
 </footer>
 
 </body>
