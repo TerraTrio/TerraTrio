@@ -1,61 +1,50 @@
 class MarkerHandler {
-    constructor(pin, map) {
-      this.pin = pin;
-      this.map = map;
-      this.marker = L.marker([pin.pin_lat, pin.pin_long]).addTo(map)
-        .bindPopup(pin.pin_name);
-      
-   
-      this.marker.on("click", () => this.handleClick());
-    }
-  
-    handleClick() {
-      const display = document.getElementById("infoDisplay");
-      display.innerHTML = ""; 
-      const cardContainer = document.createElement("div");
-      cardContainer.className = "card";
-  
-      const label = document.createElement("h4");
-      label.textContent = this.pin.pin_name;
-      cardContainer.appendChild(label);
-  
-      const info = document.createElement("p");
-      info.textContent = "Number of PCs: " + this.pin.pin_num_pc;
-      cardContainer.appendChild(info);
-  
-     
-      const printersInfo = document.createElement("p");
-      printersInfo.textContent = "Number of Printers: " + this.pin.pin_num_printers;
-      cardContainer.appendChild(printersInfo);
-  
-      const btnContainer = document.createElement("div");
-      btnContainer.id = "btnContainer";
-      cardContainer.appendChild(btnContainer);
-  
-      const reserveBtn = document.createElement("button");
-      reserveBtn.id = "cardBtn";
-      reserveBtn.textContent = "Reserve";
-      reserveBtn.style.backgroundColor = "orange";
-      btnContainer.appendChild(reserveBtn);
-  
-      const occupyBtn = document.createElement("button");
-      occupyBtn.id = "cardBtn";
-      occupyBtn.textContent = "Occupy";
-      occupyBtn.style.backgroundColor = "red";
-      btnContainer.appendChild(occupyBtn);
-  
+  constructor(pin, map) {
+    this.pin = pin;
+    this.map = map;
 
-      reserveBtn.addEventListener("click", () => {
-        cardContainer.style.backgroundColor = "blue";
-      });
-  
-      occupyBtn.addEventListener("click", () => {
-        cardContainer.style.backgroundColor = "red";
-      });
-  
-      display.appendChild(cardContainer);
-    }
+    // Create a marker and bind a formatted popup
+    this.marker = L.marker([pin.pin_lat, pin.pin_long])
+      .addTo(map)
+      .bindPopup(this.createPopupContent(pin)); // Use createPopupContent here
+
+    // Add a click event for extra interactivity
+    this.marker.on("click", () => this.handleClick());
   }
+
+  createPopupContent(pin) {
+    console.log("Last Cut Date:", pin.last_cut_date); // Debugging the date
+
+    const needsCutting = pin.grass_height >= pin.grass_cut_threshold;
+
+    const content = `
+        <div style="text-align: center;">
+            <h4>${pin.pin_name}</h4>
+            <p>Grass Height: ${pin.grass_height} cm</p>
+            <p>Threshold: ${pin.grass_cut_threshold} cm</p>
+            <p style="color: ${needsCutting ? "red" : "green"}; font-weight: bold;">
+                ${needsCutting ? "Grass needs cutting!" : "Grass height is within limits."}
+            </p>
+            ${pin.last_cut_date ? `
+                <p>Last Cut Date: ${pin.last_cut_date}</p>
+            ` : ""}
+            ${pin.pin_image ? `
+                <img 
+                    src="${pin.pin_image}" 
+                    onerror="this.src='default-placeholder.jpg';" 
+                    alt="${pin.pin_name}" 
+                    style="width: 100%; max-width: 200px; border-radius: 8px;">
+            ` : ""}
+        </div>
+    `;
+    return content;
+}
+
+
+
+
+}
+
   
   class LeafletMap {
     constructor(containerId, center, zoom) {
@@ -93,7 +82,7 @@ class MarkerHandler {
       var features = L.featureGroup();
   
 
-      var polygon = L.polygon(jsonData.map_polygon_vertices, { color: "green" })
+      var polygon = L.polygon(jsonData.map_polygon_vertices, { color: "blue" })
         .addTo(this.map)
         .bindPopup(jsonData.map_name);
   
@@ -125,7 +114,7 @@ class MarkerHandler {
 
  
 
-  fetch("./app.json")
+  fetch("app.json")
     .then((response) => response.json())
     .then((jsonData) => {
       const mapHandler = new MapHandler("map", jsonData);
@@ -137,3 +126,4 @@ class MarkerHandler {
       });
     })
     .catch((error) => console.error("Error fetching JSON:", error));
+

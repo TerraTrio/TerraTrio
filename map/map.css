@@ -102,13 +102,14 @@ body {
     opacity: 0.8;
 }
 
-/* Map Style */
 .map {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     background-color: rgba(56, 56, 58, 0.5);
-    position: relative;
-    margin: auto;
+    position: absolute;
+    top: 50%; /* Centers vertically */
+    left: 50%; /* Centers horizontally */
+    transform: translate(-50%, -50%); /* Ensures perfect centering */
     width: 900px;
     height: 570px;
     border-radius: 20px;
@@ -116,8 +117,9 @@ body {
     display: flex;
     flex-wrap: wrap;
     color: aliceblue;
-    margin-top: 60px;
+    /* Removed margin-top: 60px to allow proper centering */
 }
+
 
 .map:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -240,13 +242,16 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Headings */
 h2 {
-    font-size: 30px;
-    color: #5011e1;
-    font-family: Arial, sans-serif;
+    font-size: 3rem;
+    color: #4CAF50;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
-
 /* Basic Reset */
 * {
     margin: 0;
@@ -280,18 +285,40 @@ header {
     align-items: center;
     justify-content: space-between; /* Space out logo, navbar, and search bar */
     padding: 20px;
-    background-color: transparent; /* Transparent background */
-    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
-/* Logo Styling */
 .logo-container {
-    flex: 0 0 auto; /* Keep logo on the left */
+    display: flex;             
+    align-items: center;       
+    gap: 10px;                 
 }
+
+
+.logo-link {
+    display: inline-flex;          
+    align-items: center;           
+    text-decoration: none;         
+}
+
+
+.logo-text {
+    font-size: 1.2rem;            
+    font-weight: bold;             
+    color: #ffffff;                
+    transition: color 0.3s ease;  
+}
+
+
+.logo-link:hover .logo-text {
+    color: #388E3C;                
+}
+
 
 .logo {
-    max-height: 80px;
-    margin-left: 40px;
+    max-height: 80px;              
+    margin-right: 10px;            
+    transition: transform 0.3s ease; 
 }
 
 /* Navbar Styling */
@@ -359,15 +386,20 @@ nav ul li a {
 
 
 /* Map Section */
-#map-placeholder {
-    background-color: #ddd;
-    height: 300px;
-    text-align: center;
-    padding: 10px;
-    line-height: 300px;
-    font-size: 1.2em;
-    color: #666;
-    border-radius: 8px;
+#mapContainer {
+    display: flex;
+    justify-content: center; /* Center the map horizontally */
+    align-items: center; /* Center the map vertically (if needed) */
+    height: 80vh; /* Set the height of the map */
+    width: 70%; /* Ensure it stretches to full width */
+    padding: 20px; /* Optional: add padding for spacing */
+}
+
+#map {
+    width: 100%; /* Ensure the map fills the container */
+    height: 100%; /* Ensure the map takes up the full height of the container */
+    border-radius: 8px; /* Optional: rounded corners for the map */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for the map */
 }
 
 /* Other Sections */
@@ -388,28 +420,59 @@ section p {
     font-size: 1.1em;
 }
 
-/* Contact Section */
-ul {
-    list-style-type: none;
-    font-size: 1.1em;
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    transition: text-shadow 0.3s ease-in-out; /* Smooth transition for the glow effect */
 }
 
-ul li {
-    margin-bottom: 10px;
+nav ul li a:hover {
+    color: #4CAF50; /* Optional color change on hover */
+    text-shadow: 0 0 5px #4CAF50, 0 0 10px #4CAF50, 0 0 15px #4CAF50; /* Glowing text effect */
 }
 
-/* Footer with Transparent Background */
 footer {
-    background-color: transparent; /* Makes the footer transparent */
-    color: white; /* Ensures footer text is visible */
+    background-color: rgba(0, 0, 0, 0.3); /* Lighter background for the footer */
+    color: white;
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
+    padding: 30px;
+    position: relative;
     bottom: 0;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Adds shadow for better visibility */
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
+.social-icon i {
+    font-size: 40px; /* Adjust icon size */
+    color: #333; /* Icon color */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.social-icon i:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Footer Text */
+footer p {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+/* Style for images in the popups */
+.popup img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
 
 

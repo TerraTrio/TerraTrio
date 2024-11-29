@@ -1,79 +1,106 @@
-/* Basic Reset */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Set html and body heights */
 html, body {
-    height: 100%; /* Ensures the background covers the full viewport */
+    height: 100%;
     margin: 0;
     padding: 0;
 }
 
-/* Body styling */
+/* Body Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f9;
-    background-image: url("../photo/grass.jpg");  
-    background-size: cover;                    
-    background-position: center;              
-    background-attachment: fixed;             
+    background-image: url("../photo/grass.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: #333;
     line-height: 1.6;
 }
 
-/* Header Section with Transparent Background */
 /* Header Section */
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Space out logo, navbar, and search bar */
+    justify-content: space-between;
     padding: 20px;
-    background-color: transparent; /* Transparent background */
-    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
-/* Logo Styling */
+
 .logo-container {
-    flex: 0 0 auto; /* Keep logo on the left */
+    display: flex;             
+    align-items: center;       
+    gap: 10px;                 
 }
+
+
+.logo-link {
+    display: inline-flex;          
+    align-items: center;           
+    text-decoration: none;         
+}
+
+
+.logo-text {
+    font-size: 1.2rem;            
+    font-weight: bold;             
+    color: #ffffff;                
+    transition: color 0.3s ease;  
+}
+
+
+.logo-link:hover .logo-text {
+    color: #388E3C;                
+}
+
 
 .logo {
-    max-height: 80px;
-    margin-left: 40px;
+    max-height: 80px;              
+    margin-right: 10px;            
+    transition: transform 0.3s ease; 
 }
+
+
+
 
 /* Navbar Styling */
 nav {
-    flex: 1; /* Allow nav to grow and take space */
+    flex: 1;
     display: flex;
-    justify-content: center; /* Center the navigation links */
+    justify-content: center;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 30px; /* Add space between nav items */
+    gap: 30px;
     margin: 0;
     padding: 0;
 }
 
-nav ul li {
-    display: inline;
-}
-
 nav ul li a {
     text-decoration: none;
-    color: white; /* Adjust link color for readability */
+    color: white;
     font-size: 1.2em;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Optional: shadow for better visibility */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    transition: text-shadow 0.3s ease-in-out;
 }
 
-/* Search Bar Styling */
+nav ul li a:hover {
+    color: #4CAF50;
+    transform: scale(1.1);
+    text-shadow: 0 0 5px #4CAF50, 0 0 10px #4CAF50, 0 0 15px #4CAF50;
+}
+
+/* Search Bar */
 .search-container {
-    flex: 0 0 auto; /* Keep search bar on the right */
+    flex: 0 0 auto;
     display: flex;
     align-items: center;
 }
@@ -87,71 +114,134 @@ nav ul li a {
     margin-left: 15px;
 }
 
+/* Section Titles (h2) */
+h2 {
+    font-size: 3rem;
+    color: #4CAF50;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
 
-/* Home Section Styling */
-#home {
-    padding: 20px;
-    margin: 20px;
+/* Flex container for the entire intro section */
+#intro {
+    display: flex;
+    flex-direction: column; /* Stack the elements vertically */
+    justify-content: center; /* Vertically center the content */
+    align-items: center; /* Horizontally center the content */
+    text-align: center; /* Center text */
+}
+
+
+/* Container for the images */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;  /* Ensure full width for the container */
+}
+
+/* Box for the two images */
+.image-box {
+    display: flex;
+    gap: 30px; /* Gap between the images */
+    justify-content: center;
+    align-items: center; /* Aligns items vertically at the center */
+    padding: 10px;
     background-color: #fff;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 80%; /* Prevents the box from stretching too wide */
+    margin: 0 auto; /* Center the box horizontally */
 }
 
-#home h2 {
-    font-size: 2em;
-    color: #4CAF50;
-    margin-bottom: 10px;
+/* Styling for the images inside the box */
+.image {
+    width: 25%; /* Adjust image size */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-#home p {
-    font-size: 1.1em;
-    margin-bottom: 20px;
+.image:hover {
+    transform: scale(1.1); /* Slight zoom effect */
 }
 
 
 
-
-
-/* Contact Section */
-ul {
-    list-style-type: none;
-    font-size: 1.1em;
-}
-
-ul li {
-    margin-bottom: 10px;
-}
-
-#intro {
-    margin: 20px;
-    padding: 20px;
-    color: #000000;
-}
-
-#intro h2 {
-    font-size: 2em;
-    color: #4CAF50;
-    margin-bottom: 15px;
-}
-
+/* Paragraph Styling */
 #intro p {
-    font-size: 1.2em;
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Additional styling for paragraphs in info-box */
+.info-box p {
     line-height: 1.6;
-    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+#benefits ul {
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+    padding: 20px;
+    border-radius: 10px; /* Optional: adds rounded corners */
+    max-width: 800px;
+    margin: 20px auto; /* Centers the list */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: 'Arial', sans-serif; /* Font styling */
+    color: #333; /* Dark text for readability */
+}
+
+#benefits ul li {
+    font-size: 1.1rem; /* Adjust font size for readability */
+    line-height: 1.6; /* Improves readability */
 }
 
 
-/* Footer with Transparent Background */
+/* Footer Styling */
 footer {
-    background-color: transparent; /* Makes the footer transparent */
-    color: white; /* Ensures footer text is visible */
+    background-color: rgba(0, 0, 0, 0.3); /* Lighter background for the footer */
+    color: white;
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
+    padding: 30px;
+    position: relative;
     bottom: 0;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Adds shadow for better visibility */
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon i {
+    font-size: 40px; /* Adjust icon size */
+    color: #333; /* Icon color */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.social-icon i:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Footer Text */
+footer p {
+    font-size: 1rem;
+    margin-top: 10px;
+}
 
 
 
