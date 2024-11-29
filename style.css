@@ -15,7 +15,7 @@ html, body {
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f9;
-    background-image: url("../photo/grass.jpg");
+    background-image: url("./photo/grass.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
