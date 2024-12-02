@@ -3,12 +3,20 @@ class MarkerHandler {
     this.pin = pin;
     this.map = map;
 
-    // Create a marker and bind a formatted popup
-    this.marker = L.marker([pin.pin_lat, pin.pin_long])
-      .addTo(map)
-      .bindPopup(this.createPopupContent(pin)); // Use createPopupContent here
+   
+    const grassIcon = L.icon({
+      iconUrl: '/photo/leaf-green.jpg',  
+      iconSize: [32, 32],                 
+      iconAnchor: [16, 32],               
+      popupAnchor: [0, -32],             
+    });
 
-    // Add a click event for extra interactivity
+    
+    this.marker = L.marker([pin.pin_lat, pin.pin_long], { icon: grassIcon })
+      .addTo(map)
+      .bindPopup(this.createPopupContent(pin)); 
+
+    
     this.marker.on("click", () => this.handleClick());
   }
 
@@ -40,6 +48,7 @@ class MarkerHandler {
     return content;
   }
 }
+
 
 class LeafletMap {
   constructor(containerId, center, zoom) {
