@@ -5,7 +5,7 @@ class MarkerHandler {
 
    
     const grassIcon = L.icon({
-      iconUrl: '/photo/leaf-green.jpg',  
+      iconUrl: 'https://raw.githubusercontent.com/TerraTrio/TerraTrio/refs/heads/main/photo/leaf-green.jpg',  
       iconSize: [32, 32],                 
       iconAnchor: [16, 32],               
       popupAnchor: [0, -32],             
