@@ -1,4 +1,3 @@
-/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -69,7 +68,7 @@ header {
 
 
 
-/* Navbar Styling */
+
 nav {
     flex: 1;
     display: flex;
@@ -98,7 +97,7 @@ nav ul li a:hover {
     text-shadow: 0 0 5px #4CAF50, 0 0 10px #4CAF50, 0 0 15px #4CAF50;
 }
 
-/* Search Bar */
+
 .search-container {
     flex: 0 0 auto;
     display: flex;
@@ -114,7 +113,7 @@ nav ul li a:hover {
     margin-left: 15px;
 }
 
-/* Section Titles (h2) */
+
 h2 {
     font-size: 3rem;
     color: #4CAF50;
@@ -126,42 +125,42 @@ h2 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-/* Flex container for the entire intro section */
+
 #intro {
     display: flex;
-    flex-direction: column; /* Stack the elements vertically */
-    justify-content: center; /* Vertically center the content */
-    align-items: center; /* Horizontally center the content */
-    text-align: center; /* Center text */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
 }
 
 
-/* Container for the images */
+
 .image-container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    width: 100%;  /* Ensure full width for the container */
+    width: 100%;  
 }
 
-/* Box for the two images */
+
 .image-box {
     display: flex;
-    gap: 30px; /* Gap between the images */
+    gap: 30px; 
     justify-content: center;
-    align-items: center; /* Aligns items vertically at the center */
+    align-items: center; 
     padding: 10px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 80%; /* Prevents the box from stretching too wide */
-    margin: 0 auto; /* Center the box horizontally */
+    max-width: 80%; 
+    margin: 0 auto; 
 }
 
-/* Styling for the images inside the box */
+
 .image {
-    width: 25%; /* Adjust image size */
+    width: 25%; 
     height: auto;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -169,14 +168,14 @@ h2 {
 }
 
 .image:hover {
-    transform: scale(1.1); /* Slight zoom effect */
+    transform: scale(1.1); 
 }
 
 
 
-/* Paragraph Styling */
+
 #intro p {
-    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+    background-color: rgba(255, 255, 255, 0.7); 
     padding: 20px;
     border-radius: 10px;
     max-width: 800px;
@@ -186,32 +185,32 @@ h2 {
     color: #333;
 }
 
-/* Additional styling for paragraphs in info-box */
+
 .info-box p {
     line-height: 1.6;
     font-size: 1.1rem;
 }
 
 #benefits ul {
-    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+    background-color: rgba(255, 255, 255, 0.7); 
     padding: 20px;
-    border-radius: 10px; /* Optional: adds rounded corners */
+    border-radius: 10px; 
     max-width: 800px;
-    margin: 20px auto; /* Centers the list */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    font-family: 'Arial', sans-serif; /* Font styling */
-    color: #333; /* Dark text for readability */
+    margin: 20px auto; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    font-family: 'Arial', sans-serif; 
+    color: #333; 
 }
 
 #benefits ul li {
-    font-size: 1.1rem; /* Adjust font size for readability */
-    line-height: 1.6; /* Improves readability */
+    font-size: 1.1rem; 
+    line-height: 1.6; 
 }
 
 
-/* Footer Styling */
+
 footer {
-    background-color: rgba(0, 0, 0, 0.3); /* Lighter background for the footer */
+    background-color: rgba(0, 0, 0, 0.3); 
     color: white;
     text-align: center;
     padding: 30px;
@@ -228,13 +227,13 @@ footer {
 }
 
 .social-icon i {
-    font-size: 40px; /* Adjust icon size */
-    color: #333; /* Icon color */
-    transition: transform 0.3s ease; /* Smooth hover effect */
+    font-size: 40px; 
+    color: #333; 
+    transition: transform 0.3s ease; 
 }
 
 .social-icon i:hover {
-    transform: scale(1.1); /* Slightly enlarge on hover */
+    transform: scale(1.1); 
 }
 
 /* Footer Text */

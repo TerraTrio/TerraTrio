@@ -36,14 +36,14 @@ body {
     margin-bottom: 20px;
 }
 
-/* Styling for the Image in Home Section */
+
 .home-image {
-    width: 100%;  /* Makes the image fill the width of the section */
-    max-width: 800px;  /* Optional: limits the maximum width of the image */
-    height: auto;  /* Maintains aspect ratio */
-    display: block;  /* Makes sure image is displayed as a block element */
-    margin: 20px 0;  /* Adds space above and below the image */
-    border-radius: 8px;  /* Optional: rounded corners for the image */
+    width: 100%;  
+    max-width: 800px;  
+    height: auto;  
+    display: block;  
+    margin: 20px 0;  
+    border-radius: 8px;  
 }
 
 /* Map Container */
@@ -107,9 +107,9 @@ body {
     transition: 0.3s;
     background-color: rgba(56, 56, 58, 0.5);
     position: absolute;
-    top: 50%; /* Centers vertically */
-    left: 50%; /* Centers horizontally */
-    transform: translate(-50%, -50%); /* Ensures perfect centering */
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
     width: 900px;
     height: 570px;
     border-radius: 20px;
@@ -117,7 +117,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     color: aliceblue;
-    /* Removed margin-top: 60px to allow proper centering */
+    
 }
 
 
@@ -125,7 +125,7 @@ body {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* Vertical Navbar */
+
 .vertical-navbar {
     position: fixed;
     top: 0;
@@ -259,9 +259,9 @@ h2 {
     box-sizing: border-box;
 }
 
-/* Set html and body heights */
+
 html, body {
-    height: 100%; /* Ensures the background covers the full viewport */
+    height: 100%; 
     margin: 0;
     padding: 0;
 }
@@ -278,12 +278,11 @@ body {
     line-height: 1.6;
 }
 
-/* Header Section with Transparent Background */
-/* Header Section */
+
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Space out logo, navbar, and search bar */
+    justify-content: space-between; 
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.3);
 }
@@ -323,15 +322,15 @@ header {
 
 /* Navbar Styling */
 nav {
-    flex: 1; /* Allow nav to grow and take space */
+    flex: 1; 
     display: flex;
-    justify-content: center; /* Center the navigation links */
+    justify-content: center; 
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 30px; /* Add space between nav items */
+    gap: 30px; 
     margin: 0;
     padding: 0;
 }
@@ -342,14 +341,14 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: white; /* Adjust link color for readability */
+    color: white; 
     font-size: 1.2em;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Optional: shadow for better visibility */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
 }
 
 /* Search Bar Styling */
 .search-container {
-    flex: 0 0 auto; /* Keep search bar on the right */
+    flex: 0 0 auto; 
     display: flex;
     align-items: center;
 }
@@ -364,7 +363,7 @@ nav ul li a {
 }
 
 
-/* Home Section Styling */
+
 #home {
     padding: 20px;
     margin: 20px;
@@ -388,18 +387,18 @@ nav ul li a {
 /* Map Section */
 #mapContainer {
     display: flex;
-    justify-content: center; /* Center the map horizontally */
-    align-items: center; /* Center the map vertically (if needed) */
-    height: 80vh; /* Set the height of the map */
-    width: 70%; /* Ensure it stretches to full width */
-    padding: 20px; /* Optional: add padding for spacing */
+    justify-content: center; 
+    align-items: center; 
+    height: 80vh; 
+    width: 70%; 
+    padding: 20px;
 }
 
 #map {
-    width: 100%; /* Ensure the map fills the container */
-    height: 100%; /* Ensure the map takes up the full height of the container */
-    border-radius: 8px; /* Optional: rounded corners for the map */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for the map */
+    width: 100%; 
+    height: 100%; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 /* Other Sections */
@@ -425,16 +424,16 @@ nav ul li a {
     color: white;
     font-size: 1.2em;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-    transition: text-shadow 0.3s ease-in-out; /* Smooth transition for the glow effect */
+    transition: text-shadow 0.3s ease-in-out; 
 }
 
 nav ul li a:hover {
-    color: #4CAF50; /* Optional color change on hover */
-    text-shadow: 0 0 5px #4CAF50, 0 0 10px #4CAF50, 0 0 15px #4CAF50; /* Glowing text effect */
+    color: #4CAF50; 
+    text-shadow: 0 0 5px #4CAF50, 0 0 10px #4CAF50, 0 0 15px #4CAF50; 
 }
 
 footer {
-    background-color: rgba(0, 0, 0, 0.3); /* Lighter background for the footer */
+    background-color: rgba(0, 0, 0, 0.3); 
     color: white;
     text-align: center;
     padding: 30px;
@@ -451,13 +450,13 @@ footer {
 }
 
 .social-icon i {
-    font-size: 40px; /* Adjust icon size */
-    color: #333; /* Icon color */
-    transition: transform 0.3s ease; /* Smooth hover effect */
+    font-size: 40px; 
+    color: #333; 
+    transition: transform 0.3s ease; 
 }
 
 .social-icon i:hover {
-    transform: scale(1.1); /* Slightly enlarge on hover */
+    transform: scale(1.1); 
 }
 
 /* Footer Text */
@@ -473,6 +472,8 @@ footer p {
     border-radius: 8px;
     margin-top: 10px;
   }
+
+
   
 
 
